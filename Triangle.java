@@ -22,6 +22,13 @@ public class Triangle {
             }
             else return "This is an Isosceles Triangle.";
         }
+        else if(side2==side3) {
+            if(side1==side2) {
+                return "This is an Equilateral Triangle.";
+            }
+            else return "This is an Isosceles Triangle.";
+
+        }
         else return "This is a Scalene Triangle.";
     }
     public void compareTrinagles(Triangle t) {
