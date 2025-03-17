@@ -26,28 +26,26 @@ public class BracuBus {
      }
     }
     public void board(BracuStudent st1) {
-        if(st1.pass) {
-            if(st1.destination.equals(destination)) {
-                passList[passCount++] = st1.name;
-                System.out.println(st1.name + " boarded the bus.");
+        if(passCount<capacity) {
+            if(st1.pass) {
+                if(st1.destination.equals(destination)) {
+                    passList[passCount++] = st1.name;
+                    System.out.println(st1.name + " boarded the bus.");
+                }
+                else {
+                    System.out.println("You got on the wrong bus!");
+                }
             }
             else {
-                System.out.println("You got on the wrong bus!");
+                System.out.println("You don't have a bus pass!");
             }
-        }
-        else {
-            System.out.println("You don't have a bus pass!");
-        }
-    }
-    public void board(BracuStudent st1,BracuStudent st2) {
-        if(passCount<capacity) {
-            board(st1);
-        }
-        if(passCount<capacity) {
-            board(st2);
         }
         else {
             System.out.println("Bus is full!");
         }
+    }
+    public void board(BracuStudent st1,BracuStudent st2) {
+            board(st1);
+            board(st2);
     }
 }
